@@ -193,7 +193,78 @@ body{
 body{
     background: #51515F;
 }
-.circle{
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40px, -40px);
+    animation: rotWheel 2s ease infinite;
+}
+.wheel{
+    width: 75px;
+    height: 75px;
+    background: url('images/tyre.png') 0 0 / 100% no-repeat;
+}
+@-webkit-keyframes transform {	
+    0%{width: 50px;
+        height: 50px;}    
+    50%{width: 50px;
+        height: 50px;
+        transform: translate(-50px, -50px);}
+    75%{width: 75px;
+        height: 75px;
+        transform: translate(-63px, -60px);}
+    100%{width: 50px;
+        height: 50px;}
+}
+
+ @-webkit-keyframes rotWheel {
+    0%{transform: translate(-40px, -40px);}
+    100%{transform: translate(-40px, -40px)  rotate(360deg)}
+}
+
+/* Мультиспинер */
+
+.multi-spinner-container {
+    width: 150px;
+    height: 150px;
+    position: absolute;    
+    transform: translate(-77px, -75px);
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+  }
+  
+  .multi-spinner {
+    position: absolute;
+    width: calc(100% - 9.9px);
+    height: calc(100% - 9.9px);
+    border: 5px solid transparent;
+    border-top-color: #428DFF;
+    border-radius: 50%;
+    -webkit-animation: spin 5s cubic-bezier(0.17, 0.49, 0.96, 0.76) infinite;
+    animation: spin 5s cubic-bezier(0.17, 0.49, 0.96, 0.76) infinite;
+  }
+  @keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+/* Первый лоудер  */
+
+/* .circle{
     width: 50px;
     height: 50px;
     position: absolute;
